@@ -1,0 +1,85 @@
+$base-color: #F8F3ED;
+
+:root {
+  --width-base: 390;
+  background-color: #F8F3ED;
+}
+
+@screen md {
+  :root {
+      --width-base: 1920;
+  }
+
+}
+
+@function ca($number: 0) {
+  @return calc(100vw * ($number / var(--width-base)));
+}
+
+
+.nav-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: ca(5);
+  padding: ca(5);
+  border-bottom: .5px solid #8b8b8b;
+  background-color: $base-color;
+  position: fixed;
+  z-index: 100;
+  .firts-list{
+
+      display: flex;
+      gap: ca(2);
+      font-weight: 600;
+      font-size: ca(3);
+
+  }
+  h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .second-list{
+
+      display: flex;
+      gap: ca(2);
+      font-weight: 600;
+      font-size: ca(3);
+
+  }
+}
+
+@media (max-width: 768px){
+  
+.nav-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: ca(2);
+  padding: ca(5);
+  border-bottom: .5px solid #8b8b8b;
+  background-color: $base-color;
+  position: fixed;
+  z-index: 100;
+  .firts-list{
+    display: none;
+    gap: ca(2);
+    font-weight: 600;
+    font-size: ca(2);
+
+  }
+  h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .second-list{
+    display: none;
+    gap: ca(2);
+    font-weight: 600;
+    font-size: ca(3);
+
+  }
+}
+}
